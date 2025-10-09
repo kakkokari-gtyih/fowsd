@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
     <title>Phase 0-1: HTML基礎確認</title>
+    <style>
+        .food-kv {
+            width: clamp(200px, 20vw, 300px);
+            height: auto;
+            float: right;
+            margin: 0 0 1em 1em;
+            height: auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
 <body>
     <h1>🌐 Phase 0-1: HTML基礎確認</h1>
@@ -21,13 +36,15 @@
     <div>
         <h2>📋 課題2: リスト作成</h2>
         <p><strong>指示:</strong> 好きな食べ物を5つ、番号付きリスト（ol）で作成してください。</p>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvjXkVHDfcxNTan1R2kzIhl8LW3IHkdED9T9VYVempiZ30Z0Vxou27vt2IvXFnYmagnP2fNb4aFm3rLsvl3qC-UM2eQEzWH_uzUi-yfZVAOjmitEFT7PcKtk-G6c39h-95imbp2L5UAEL7/s800/takoyaki_fune.png" class="food-kv" />
         <ol>
             <li>お寿司</li>
             <li>うどん</li>
             <li>からあげ</li>
             <li>サラダ</li>
-            <li>菓子パン</li>
+            <li>たこやき</li>
         </ol>
+        <div class="clearfix"></div>
     </div>
     <div>
         <h2>🔗 課題3: リンク作成</h2>
