@@ -40,5 +40,35 @@
     <p>
         <a href="index.html">🌐 Phase 0-1: HTML基礎確認に戻る</a>
     </p>
+    <hr />
+    <h1>第3回課題②</h1>
+    <h2>BMI指標計算</h2>
+    <form>
+        <p><label>体重(kg)：<input id="weight" type="number" /></label></p>
+        <p><label>身長(cm)：<input id="height" type="number" /></label></p>
+        <p><label>BMI：<output id="bmi"></output></label></p>
+    </form>
+    <script>
+        (() => {
+            const weightInput = document.getElementById('weight');
+            const heightInput = document.getElementById('height');
+            const bmiOutput = document.getElementById('bmi');
+            if (!weightInput || !heightInput || !bmiOutput) return;
+
+            function calcBmi() {
+                const weight = parseFloat(weightInput.value);
+                const height = parseFloat(heightInput.value);
+                if (isNaN(weight) || isNaN(height) || height === 0) {
+                    bmiOutput.value = '';
+                    return;
+                }
+                const bmi = weight / Math.pow(height / 100, 2);
+                bmiOutput.value = Math.round(bmi * 100) / 100;
+            }
+
+            weightInput.addEventListener('input', calcBmi);
+            heightInput.addEventListener('input', calcBmi);
+        })();
+    </script>
 </body>
 </html>

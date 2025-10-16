@@ -18,11 +18,19 @@
             display: table;
             clear: both;
         }
+        
+        #clock {
+            font-size: 48px;
+            font-weight: bold;
+            color: blue;
+        }
     </style>
 </head>
 <body>
     <h1>🌐 Phase 0-1: HTML基礎確認</h1>
     <p>梶原 渉磨 (AAA24106)</p>
+    <h2>現在時刻</h2>
+    <div id="clock">0000/00/00 00:00:00</div>
     <div>
         <h2>📝 課題1: 自己紹介セクション作成</h2>
         <p><strong>指示:</strong> 下記のHTMLコメント部分に、あなたの自己紹介を書いてください。</p>
@@ -54,5 +62,26 @@
         </ul>
         <a href="second.html">おすすめの旅行先</a>
     </div>
+
+    <script>
+        (() => {
+            const clockElement = document.getElementById('clock');
+            if (!clockElement) return;
+
+            function updateClock() {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const date = now.getDate().toString().padStart(2, '0');
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                clockElement.textContent = `${year}/${month}/${date} ${hours}:${minutes}:${seconds}`;
+            }
+
+            setInterval(updateClock, 1000);
+            updateClock();
+        })();
+    </script>
 </body>
 </html>
